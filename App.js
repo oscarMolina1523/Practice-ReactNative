@@ -1,9 +1,12 @@
 import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
+
+  const name="Oscar";
+
   return (
     <View style={styles.container}>
-      <Text>This is my first test of React Native</Text>
+      <Text>This is my first test of React Native {name}</Text>
       <Image
         source={{
           uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
