@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
 
   //you can declare a simple constant
-  const name="Oscar";
+  const name = "Oscar";
 
   //you can use functions in typescript you need to add the type of value example:string
   const getFullName = (
@@ -24,7 +25,7 @@ export default function App() {
         }}
         style={{ width: 200, height: 200 }}
       />
-      <Cat/>
+      <Cat />
       <TextInput
         style={{
           height: 40,
@@ -39,11 +40,23 @@ export default function App() {
 
 //you can create components reusable , don't repeat code
 const Cat = () => {
+  //you can use the hook useState to change values in your component 
+  const [isHungry, setIsHungry] = useState(true);
+
   return (
     <View>
-      <Text>I am also a cat!</Text>
+      <Text>
+        I am cat, and I am {isHungry ? 'hungry' : 'full'}!
+      </Text>
+      <Button
+        onPress={() => {
+          setIsHungry(false);
+        }}
+        disabled={!isHungry}
+        title={isHungry ? 'Give me some food, please!' : 'Thank you!'}
+      />
     </View>
-  );
+  )
 };
 
 //you can use props to receive values, this is typescript
