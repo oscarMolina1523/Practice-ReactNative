@@ -2,11 +2,22 @@ import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
 
+  //you can declare a simple constant
   const name="Oscar";
+
+  //you can use functions in typescript you need to add the type of value example:string
+  const getFullName = (
+    firstName,
+    secondName,
+    thirdName,
+  ) => {
+    return firstName + ' ' + secondName + ' ' + thirdName;
+  };
 
   return (
     <View style={styles.container}>
       <Text>This is my first test of React Native {name}</Text>
+      <Text>This is my full name {getFullName('Escanor', 'Natanael', 'Gabriel')}</Text>
       <Image
         source={{
           uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
@@ -24,6 +35,7 @@ export default function App() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
