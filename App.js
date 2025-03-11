@@ -46,6 +46,19 @@ const Cat = () => {
   );
 };
 
+//you can use props to receive values, this is typescript
+// type DogProps = {
+//   name: string;
+// };
+
+// const Dog = (props:DogProps) => {
+//   return (
+//     <View>
+//       <Text>I am also a dog!</Text>
+//     </View>
+//   );
+// };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
