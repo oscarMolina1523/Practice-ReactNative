@@ -24,6 +24,7 @@ export default function App() {
         }}
         style={{ width: 200, height: 200 }}
       />
+      <Cat/>
       <TextInput
         style={{
           height: 40,
@@ -36,6 +37,14 @@ export default function App() {
   );
 }
 
+//you can create components reusable , don't repeat code
+const Cat = () => {
+  return (
+    <View>
+      <Text>I am also a cat!</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
