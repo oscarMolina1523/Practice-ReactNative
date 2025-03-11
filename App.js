@@ -26,6 +26,7 @@ export default function App() {
         style={{ width: 200, height: 200 }}
       />
       <Cat />
+      <PizzaTranslator/>
       <TextInput
         style={{
           height: 40,
@@ -57,6 +58,30 @@ const Cat = () => {
       />
     </View>
   )
+};
+
+//this is an example to control the changes in textInput element 
+const PizzaTranslator = () => {
+  //the state control the text and update the value
+  const [text, setText] = useState('');
+  return (
+    <View style={{padding: 10}}>
+      <TextInput
+        style={{height: 40, padding: 5}}
+        placeholder="Type here to translate!"
+        //here control the event and update the data in text const
+        onChangeText={newText => setText(newText)}
+        defaultValue={text}
+      />
+      <Text style={{padding: 10, fontSize: 42}}>
+        //foreach space in text we create an array and show the pizza img
+        {text
+          .split(' ')
+          .map(word => word && '🍕')
+          .join(' ')}
+      </Text>
+    </View>
+  );
 };
 
 //you can use props to receive values, this is typescript
