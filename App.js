@@ -74,7 +74,7 @@ const PizzaTranslator = () => {
         defaultValue={text}
       />
       <Text style={{padding: 10, fontSize: 42}}>
-        //foreach space in text we create an array and show the pizza img
+        {/* foreach space in text we create an array and show the pizza img */}
         {text
           .split(' ')
           .map(word => word && '🍕')
